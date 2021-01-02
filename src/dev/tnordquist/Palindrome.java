@@ -35,7 +35,15 @@ public class Palindrome {
     return false;
   }
 
+  static boolean palindromeRearranging2(String inputString) {
+    int map = 0;
+    for(int i=0; i<inputString.length(); i++) {
+      map ^= 1 << (inputString.charAt(i) - 'a');
+    }
+    return map == 0 || (map & -map) == map;
+  }
+
   public static void main(String[] args) {
-    System.out.println(palindromeRearranging("abdhuierf"));
+    System.out.println(palindromeRearranging2("abcab"));
   }
 }
