@@ -1,8 +1,5 @@
 package dev.tnordquist;
 
-import java.net.Inet4Address;
-import java.util.Arrays;
-import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class IPAddress {
