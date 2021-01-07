@@ -29,21 +29,19 @@ public class ArrayDifference {
     int count = 0;
     Arrays.sort(arr);
     while (avoid < arr[arr.length-1]+2){
-
       for (int j : arr) {
         if (j % avoid != 0) {
           count++;
         }
       }
       if(count == arr.length) {
-        return avoid;
+        break;
       } else {
         count = 0;
         avoid++;
       }
     }
-
-    return -1;
+    return avoid;
   }
 
   public static void main(String[] args) {
