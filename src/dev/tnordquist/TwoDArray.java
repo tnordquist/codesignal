@@ -1,6 +1,7 @@
 package dev.tnordquist;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 public class TwoDArray {
 
@@ -28,6 +29,7 @@ public class TwoDArray {
 
   /**
    * problem 24
+   *
    * @param matrix
    * @return
    */
@@ -37,18 +39,19 @@ public class TwoDArray {
     int y = 0;
     int[][] mines = new int[matrix.length][matrix[0].length];
 
+    int[][] dir = new int[][]{
+        {1, -1}, {1, 0}, {1, 1},
+        {0, -1}, {0, 1},
+        {-1, -1}, {-1, 0}, {-1, 1}};
+
     for (x = 0; x < matrix.length; x++) {
       for (y = 0; y < matrix[0].length; y++) {
-        if (matrix[x][y]) {
-          mines[x][y]--;
-        }
-        for (int i = -1; i < 2; i++) {
-          for (int j = -1; j < 2; j++) {
-            if (!(x + i < 0) && !(x + i > matrix.length - 1) && !(y + j < 0) && !(y + j
-                > matrix[0].length - 1)) {
-              if (matrix[x + i][y + j]) {
-                mines[x][y]++;
-              }
+        for (int[] ints : dir) {
+          if (!(x + ints[0] < 0) && !(x + ints[0] > matrix.length - 1) && !(y + ints[1] < 0)
+              && !(y + ints[1]
+              > matrix[0].length - 1)) {
+            if (matrix[x + ints[0]][y + ints[1]]) {
+              mines[x][y]++;
             }
           }
         }
@@ -65,3 +68,4 @@ public class TwoDArray {
             {true, true, false, true}})));
   }
 }
+//    IntStream stream = Arrays.stream(directions).flatMapToInt(x -> Arrays.stream(x));
