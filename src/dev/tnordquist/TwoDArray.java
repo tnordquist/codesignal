@@ -39,7 +39,7 @@ public class TwoDArray {
     int y = 0;
     int[][] mines = new int[matrix.length][matrix[0].length];
 
-    int[][] dir = new int[][]{
+    final int[][] dir = new int[][]{
         {1, -1}, {1, 0}, {1, 1},
         {0, -1}, {0, 1},
         {-1, -1}, {-1, 0}, {-1, 1}};

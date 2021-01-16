@@ -1,9 +1,5 @@
 package dev.tnordquist;
 
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-
 public class StringManipulation {
 
   static String alphabeticShift(String inputString) {
