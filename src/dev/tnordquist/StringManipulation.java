@@ -22,8 +22,9 @@ public class StringManipulation {
     return sb.toString();
   }
 
-  public static void main(String[] args) {
 
+
+  public static void main(String[] args) {
     long startTime = System.nanoTime();
     System.out.println(alphabeticShift("crazy"));
     long endTime = System.nanoTime();
